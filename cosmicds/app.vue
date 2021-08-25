@@ -434,6 +434,42 @@
                             </v-btn>
                           </div>
                           <div
+                          >
+                            <v-card
+                              color="orange lighten-5"
+                              class="mb-4"
+                              :disabled="!state.draw_on"
+                            >
+                              <v-card-text>
+                                <v-text-field
+                                  :value="state.draw_slope"
+                                  label="Slope"
+                                  hint="draw a line to fit the data in the scatterplot"
+                                  persistent-hint
+                                  color="orange darken-2"
+                                  class="mb-4"
+                                  suffix="km/s/Mpc"
+                                  outlined
+                                  readonly
+                                  dense
+                                ></v-text-field>
+                                <v-btn
+                                  block
+                                  color="orange darken-2"
+                                  class="px-auto"
+                                  max-width="100%"
+                                  dark
+                                  @click="
+                                    state.draw_on;
+                                    state.draw_slope = Math.floor(Math.random() * 200) + 400
+                                  "
+                                >
+                                  confirm line
+                                </v-btn>
+                              </v-card-text>
+                            </v-card>
+                          </div>
+                          <div
                             class="d-flex mb-4"
                           >
                             <v-btn
@@ -442,7 +478,8 @@
                               @click="fit_lines({
                                 'viewer_id': 'hub_fit_viewer'
                                 });
-                                state.bestfit_on = 1"
+                                state.bestfit_on = 1;
+                                state.bestfit_slope = Math.floor(Math.random() * 200) + 400"
                             >
                               generate best fit
                               <v-spacer></v-spacer>
@@ -454,6 +491,27 @@
                                 mdi-calculator
                               </v-icon>
                             </v-btn>
+                          </div><div
+                          >
+                            <v-card
+                              color="green lighten-5"
+                              class="mb-4"
+                              :disabled="!state.bestfit_on"
+                            >
+                              <v-card-text>
+                                <v-text-field
+                                  :value="state.bestfit_slope"
+                                  label="Slope"
+                                  hint="calculate line of best fit for the data in the scatterplot"
+                                  persistent-hint
+                                  color="orange darken-2"
+                                  suffix="km/s/Mpc"
+                                  outlined
+                                  readonly
+                                  dense
+                                ></v-text-field>
+                              </v-card-text>
+                            </v-card>
                           </div>
                         </v-col>
                         <v-col>

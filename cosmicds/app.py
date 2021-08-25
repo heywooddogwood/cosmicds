@@ -51,6 +51,9 @@ class ApplicationState(State):
     draw_on = CallbackProperty(0)
     bestfit_on = CallbackProperty(0)
 
+    draw_slope = CallbackProperty("")
+    bestfit_slope = CallbackProperty("")
+
 
 # Everything in this class is exposed directly to the app.vue.
 class Application(VuetifyTemplate):
