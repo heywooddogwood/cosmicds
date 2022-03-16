@@ -454,7 +454,6 @@
                                       elevation="2"
                                       @click="
                                         state.marker = 'cho_row1';
-                                        state.spectrum_tool_visible = 0;
                                       "
                                     >
                                       back
@@ -781,11 +780,6 @@
                               </v-card>
                             </v-col>
                           </v-row>
-                        </v-container>
-                        <v-container
-                          :class="state.spectrum_tool_visible ? 'd-block' : 'd-none'"
-                          class="py-0"
-                        >
                         </v-container>
                       </v-stepper-content>
 
