@@ -1,4 +1,4 @@
-<template>             
+<template>         
   <v-card
     color="info"
     class="mb-4 mx-auto guideline"
